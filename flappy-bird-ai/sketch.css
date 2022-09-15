@@ -1,0 +1,14 @@
+#infos,
+#counters,
+#ai {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 600px;
+    margin-top: 10px;
+}
+
+.scores {
+    display: flex;
+    flex-direction: column;
+}

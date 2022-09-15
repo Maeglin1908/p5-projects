@@ -9,6 +9,7 @@
       - [Multi-agents - Live generation :running: :sparkles:](#multi-agents---live-generation-running-sparkles)
     - [Game of Life - cellular automaton :seedling:](#game-of-life---cellular-automaton-seedling)
     - [Snake :snake:](#snake-snake)
+    - [Flappy bird :baby_chick:](#flappy-bird-baby_chick)
 
 That repository contains some of my p5 projects. Trying, testing things... :)
 
@@ -94,5 +95,19 @@ https://user-images.githubusercontent.com/17339605/190255536-0ea7f406-d89f-4699-
 
 The well known game, Snake :).  
 The speed (here the framerate) will increase each 5 foods eaten.
+
+[ Demo coming soon ...]
+
+### Flappy bird :baby_chick:
+
+Another known game. A bird, some pipes, go ahead and beat your score :)
+
+Controls : 
+
+- Press Spacebar to jump
+- Press "P" to play/pause
+- Press "R" to restart
+
+[TODO : Improve graphics ...]
 
 [ Demo coming soon ...]

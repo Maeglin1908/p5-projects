@@ -15,7 +15,7 @@ let frameCounter = 0;
 
 // AI Part
 let maxCycles = 500;
-let population = 500;
+let population = 100;
 let bestScoreTraining = 0;
 let bestScorePractice = 0;
 let training = true;
@@ -82,11 +82,12 @@ function showInfos() {
 
 function setup() {
     createCanvas(600, 400);
+    tf.setBackend("cpu");
     frameRate(60);
     startNewGame();
 
     if (training) {
-        sliderCycles.value(maxCycles);
+        sliderCycles.value(1);
     } else {
         sliderCycles.value(1);
         noLoop();
@@ -152,11 +153,13 @@ function draw() {
         }
     }
 
-    for (let pipe of pipes) {
-        pipe.show();
-    }
-    for (let bird of birds) {
-        bird.show();
+    if (sliderCycles.value() < 50) {
+        for (let pipe of pipes) {
+            pipe.show();
+        }
+        for (let bird of birds) {
+            bird.show();
+        }
     }
 
     showInfos();

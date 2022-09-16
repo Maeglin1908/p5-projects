@@ -1,13 +1,3 @@
-function mutate(x) {
-    if (random(1) < 0.1) {
-        let offset = randomGaussian() * 0.5;
-        let newx = x + offset;
-        return newx;
-    } else {
-        return x;
-    }
-}
-
 class Bird {
     constructor(brain) {
         this.pos = createVector(birdOffset, height / 2);
@@ -18,10 +8,9 @@ class Bird {
         this.score = 0;
         if (brain instanceof NeuralNetwork) {
             this.brain = brain.copy();
-            this.brain.mutate(mutate);
+            this.brain.mutate(0.1);
         } else {
-            this.brain = new NeuralNetwork(5, 8, 2);
-            // this.brain.setActivationFunction(ActivationFunction.tanh);
+            this.brain = new NeuralNetwork([5, 8, 2]);
         }
         this.fitness = 0;
     }
@@ -96,7 +85,6 @@ class Bird {
             let closestDoorTop = map(pipePartsPos.top.y + pipePartsPos.top.height, 0, height, 0, 1);
             let closestDoorBottom = map(pipePartsPos.bottom.y, 0, height, 0, 1);
             let inputs = [birdY, birdVelocity, closestX, closestDoorTop, closestDoorBottom];
-            // console.log(inputs);
             let decision = this.brain.predict(inputs);
 
             if (decision[1] > decision[0]) {
